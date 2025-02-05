@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Publications</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #333; }
+    #publication-list li { margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+    #publication-list li a { color: #007BFF; text-decoration: none; }
+    #publication-list li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>Our Publications</h1>
+  <ul id="publication-list"></ul>
+  
+  <script>
+    // Define your publications here as an array of objects
+    var publications = [
+      {
+        "title": "Understanding the Basics of Stromagics",
+        "authors": "Doe, J.; Smith, A.",
+        "year": "2024",
+        "journal": "Journal of Innovative Research",
+        "link": "https://example.com/publication1"
+      },
+      {
+        "title": "Advanced Topics in Stromagics",
+        "authors": "Doe, J.; Brown, B.",
+        "year": "2023",
+        "journal": "Proceedings of the International Conference on Innovations",
+        "link": "https://example.com/publication2"
+      }
+    ];
+    
+    // Optional: sort publications by year (most recent first)
+    publications.sort(function(a, b) {
+      return b.year - a.year;
+    });
+    
+    // Display the publications on the page
+    var pubList = document.getElementById('publication-list');
+    publications.forEach(function(pub) {
+      var li = document.createElement('li');
+      li.innerHTML = '<strong>' + pub.title + '</strong> (' + pub.year + ')<br>' +
+                     '<em>' + pub.authors + '</em><br>' +
+                     '<span>' + pub.journal + '</span><br>' +
+                     '<a href="' + pub.link + '" target="_blank">View Publication</a>';
+      pubList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
